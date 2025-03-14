@@ -10,6 +10,15 @@ function transporMatriz(a) {
     }
     return at;
 }
+function imprimirMatriz(a){
+    for(let i = 0; i < a.length; i ++){
+        let linha = ""
+        for(let j = 0; j < a[i].length; j++){
+            linha += a[i][j] + "\t";
+        }
+        console.log(linha)
+    }
+}
 
 let a = [
     [1, 2, 3],
@@ -17,20 +26,8 @@ let a = [
     [7, 8, 9]
 ]
 
-for(let i = 0; i < a.length; i ++){
-    let linha = ""
-    for(let j = 0; j < a[i].length; j++){
-        linha += a[i][j] + "\t";
-    }
-    console.log(linha)
-}
-
+console.log("Matriz original:")
+imprimirMatriz(a)
 a = transporMatriz(a);
-
-for(let i = 0; i < a.length; i ++){
-    let linha = ""
-    for(let j = 0; j < a[i].length; j++){
-        linha += a[i][j] + "\t";
-    }
-    console.log(linha)
-}
+console.log("\nMatriz transposta:")
+imprimirMatriz(a)
