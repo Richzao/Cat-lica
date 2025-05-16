@@ -1,8 +1,7 @@
-x = int(input("Insira um número: "))
+import psutil
 
-if x % 2 != 0:
-    print(f"O número {x} é ímpar")
-else:
-    print(f"O número {x} é par")
-
-print(x**2)
+print(f"x: {psutil.cpu_percent(interval=1)}")
+mem = psutil.virtual_memory()
+print(f"A: {round(mem.total / (1024 ** 2), 2)}")
+print(f"B: {round(mem.available / (1024 ** 2), 2)}")
+print(f"C: {mem.percent}")
